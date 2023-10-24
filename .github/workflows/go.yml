@@ -15,7 +15,8 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     services:
-      postgres:
+    - docker:dind
+    - postgres:
         image: postgres:12
         env:
           POSTGRES_USER: root
