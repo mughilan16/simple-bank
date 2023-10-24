@@ -15,13 +15,14 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     services:
-    - docker: dind
-    - postgres:
-        image: postgres:12
+      postgres:
+        image: postgres:12-alpine
         env:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: secret
           POSTGRES_DB: simple_bank
+        ports:
+          - 5432:5432
         options: >-
           --health-cmd ps_isready
           --health-interval 10s
