@@ -11,6 +11,7 @@ import (
 	_ "github.com/stretchr/testify/require"
 )
 
+
 func createRandomAccount(t *testing.T) Account {
 	arg := CreateAccountParams{
 		Owner:    util.RandomOwner(),
